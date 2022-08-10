@@ -1,47 +1,25 @@
-
-export default function Example() {
+import FeedbackOne from "./components/FeedbackOne";
+import Header from "./components/header";
+function App() {
   return (
-    <header>
-      <div class="max-w-screen-xl px-4 py-8 mx-auto sm:py-12 sm:px-6 lg:px-8">
-        <div class="sm:justify-between sm:items-center sm:flex">
-          <div class="text-center sm:text-left">
-            <h3 class="text-2xl font-bold text-gray-900 ">
-              Certified Refurbished
-            </h3>
-          </div>
-
-          <div class="flex flex-col gap-4 mt-4 sm:flex-row sm:mt-0 sm:items-center">
-            <button
-              class="inline-flex items-center justify-center px-5 py-3 text-gray-500 transition border border-gray-200 rounded-lg hover:text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring"
-              type="button"
-            >
-              <span class="text-sm font-medium"> View Website </span>
-
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-4 h-4 ml-1.5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                />
-              </svg>
-            </button>
-
-            <button
-              class="block px-5 py-3 text-sm font-medium text-white transition bg-indigo-600 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring"
-              type="button"
-            >
-              Create Post
-            </button>
+    <div className="max-w-screen-xl px-4 py-8 mx-auto sm:py-12 sm:px-6 lg:px-8">
+      <div className="max-w-2xl px-8 py-4 mx-auto bg-white rounded-lg shadow-md dark:bg-gray-800">
+        <div className="flex items-center justify-between"></div>
+        <div className="mt-2">
+          {/* <span className=" text-2xl font-bold text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200">
+            Student Rating
+          </span> */}
+          <div className="card dark:text-white">
+            {/* {comments.map((comment, index) => (
+              <li key={comment.id}>{comment.text}</li>
+            ))} */}
+            <Header text={'Student Rating'}/>
+            <FeedbackOne />
           </div>
         </div>
       </div>
-    </header>
+    </div>
   );
 }
+
+export default App;
