@@ -1,17 +1,17 @@
 import { useState } from "react";
 
-function FeedbackOne() {
-  const [rate, setRate] = useState(3);
-  const [comment, setComment] = useState("default");
+function FeedbackOne({ rate, comment }) {
+  // const [rate, setRate] = useState(3);
+  // const [comment, setComment] = useState("default");
 
-  const com = ['This is great','It doesnt work','Thanks so much']
+  // const com = ['This is great','It doesnt work','Thanks so much']
 
-  const changeFields = () => {
-    setRate((prev) => {
-      return prev + 1;
-    });
-    setComment(com[Math.floor((Math.random()*com.length))])
-  };
+  // const changeFields = () => {
+  //   setRate((prev) => {
+  //     return prev + 1;
+  //   });
+  //   setComment(com[Math.floor((Math.random()*com.length))])
+  // };
   return (
     <div>
       <ul className="flex flex-col mt-4 mb-4">
@@ -41,7 +41,7 @@ function FeedbackOne() {
           </div>
         </li>
       </ul>
-      <div>
+      {/* <div>
         <button
           type="button"
           className="py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
@@ -49,7 +49,7 @@ function FeedbackOne() {
         >
           Update
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }
