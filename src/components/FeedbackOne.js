@@ -1,6 +1,7 @@
-import { useState } from "react";
+// import { useState } from "react";
+import { FaTimes } from "react-icons/fa";
 
-function FeedbackOne({ rate, comment, time }) {
+function FeedbackOne({ rate, comment, time, id, removeItem }) {
   // const [rate, setRate] = useState(3);
   // const [comment, setComment] = useState("default");
 
@@ -36,6 +37,9 @@ function FeedbackOne({ rate, comment, time }) {
               </div>
             </div>
             <div className="text-gray-600 dark:text-gray-200 text-xs">
+              <button className="mr-2 mb-2" onClick={() => removeItem(id)}>
+                <FaTimes color="red" />
+              </button>
               {time}
             </div>
           </div>
@@ -55,6 +59,6 @@ function FeedbackOne({ rate, comment, time }) {
 }
 
 FeedbackOne.defaultProps = {
-  time: '10:00am'
-}
+  time: "10:00am",
+};
 export default FeedbackOne;

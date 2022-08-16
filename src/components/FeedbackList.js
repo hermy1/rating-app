@@ -1,16 +1,19 @@
 import React from "react";
 import FeedbackOne from "./FeedbackOne";
-function FeedbackList({ feedback }) {
+function FeedbackList({ feedback, removeItems }) {
   if (feedback.length === 0)
-    return (
-      <FeedbackOne rate={"!"} comment={"No results found"} time={"11:00am"} />
-    );
+    return <div className="text-center mt-4 text-2xl">No rating feedback...  :/</div>
 
-  console.log(feedback.length);
   return (
     <div>
       {feedback.map((item, index) => (
-        <FeedbackOne key={item.id} rate={item.rate} comment={item.comment} />
+        <FeedbackOne
+          key={item.id}
+          rate={item.rate}
+          comment={item.comment}
+          id={item.id}
+          removeItem={removeItems}
+        />
       ))}
     </div>
   );
