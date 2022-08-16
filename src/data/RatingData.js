@@ -4,4 +4,4 @@ const RateData = [
   { id: 3, rate: 15, comment: "This is my rating and i'm not changing it." },
 ];
 
-export default RateData
+export default RateData;

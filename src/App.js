@@ -14,7 +14,7 @@ function App() {
               <li key={comment.id}>{comment.text}</li>
             ))} */}
             <Header text={"Student Rating"} />
-            <FeedbackList feedback={RatingData} />
+            <FeedbackList feedback={rate} />
           </div>
         </div>
       </div>

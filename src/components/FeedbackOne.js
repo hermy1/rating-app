@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function FeedbackOne({ rate, comment }) {
+function FeedbackOne({ rate, comment, time }) {
   // const [rate, setRate] = useState(3);
   // const [comment, setComment] = useState("default");
 
@@ -36,7 +36,7 @@ function FeedbackOne({ rate, comment }) {
               </div>
             </div>
             <div className="text-gray-600 dark:text-gray-200 text-xs">
-              6:00 AM
+              {time}
             </div>
           </div>
         </li>
@@ -54,4 +54,7 @@ function FeedbackOne({ rate, comment }) {
   );
 }
 
+FeedbackOne.defaultProps = {
+  time: '10:00am'
+}
 export default FeedbackOne;
