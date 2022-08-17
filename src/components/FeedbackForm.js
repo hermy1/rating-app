@@ -1,4 +1,25 @@
+import { useState } from "react";
+import Button from "./shared/Button";
+import Rating from "./Rating";
 function FeedbackForm() {
+  const [text, setText] = useState("");
+  const [btnDisabled, setBtnDisabled] = useState(false);
+  const [msg, setMsg] = useState("");
+  const [rating, setRating] = useState(10);
+  const grabText = (e) => {
+    if (text === "") {
+      setBtnDisabled(true);
+      setMsg(null);
+    } else if (text !== "" && text.trim().length <= 10) {
+      setMsg("Text must be more than 10 chars");
+      setBtnDisabled(true);
+    } else {
+      setMsg(null);
+      setBtnDisabled(false);
+    }
+
+    setText(e.target.value);
+  };
   return (
     <form>
       <ul className="flex flex-col mt-4 mb-4">
@@ -9,34 +30,28 @@ function FeedbackForm() {
                 <h1 className="font-bold text-ml text-center">
                   How would you rate your service with us?
                 </h1>
+
+                <div className="m-3 items-center">
+                  <Rating />
+                </div>
                 <div className="mb-4 mt-2">
                   <textarea
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="username"
                     type="text"
                     placeholder="Write your review"
+                    onChange={grabText}
                   />
-                  <button
-                    className=" bg-indigo-600 hover:bg-indigo-700 text-white text-center text-base focus:outline-none font-semibold shadow-md py-2 px-4 mt-3  rounded"
-                    type="button"
-                  >
+                  {msg && <p className="text-red-400 text-center">{msg}</p>}
+                  <Button isDisabled={btnDisabled} type="submit">
                     Submit
-                  </button>
+                  </Button>
                 </div>
               </div>
             </div>
           </div>
         </li>
       </ul>
-      <div>
-        {/* <button
-          type="button"
-          className="py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
-          //   onClick={changeFields}
-        >
-          Update
-        </button> */}
-      </div>
     </form>
   );
 }

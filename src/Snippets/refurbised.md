@@ -1,5 +1,6 @@
 export default function App() {
 return (
+
 <header>
 <div class="max-w-screen-xl px-4 py-8 mx-auto sm:py-12 sm:px-6 lg:px-8">
 <div class="sm:justify-between sm:items-center sm:flex">
@@ -45,3 +46,10 @@ Certified Refurbished
     );
 
 }
+
+{/_ <button
+type="button"
+className="py-2 px-4 bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg "
+// onClick={changeFields} >
+Update
+</button> _/}
