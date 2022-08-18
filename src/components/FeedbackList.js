@@ -8,13 +8,13 @@ function FeedbackList({ feedback, removeItems }) {
     <div>
       {feedback.map((item, index) => (
         <FeedbackOne
-          key={item.id}
-          rate={item.rate}
-          comment={item.comment}
-          id={item.id}
-          removeItem={removeItems}
+        key={item.id}
+        rate={item.rate}
+        comment={item.comment}
+        id={item.id}
+        removeItem={removeItems}
         />
-      ))}
+        ))}
     </div>
   );
 }

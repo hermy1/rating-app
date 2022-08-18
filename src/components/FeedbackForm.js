@@ -1,11 +1,12 @@
 import { useState } from "react";
 import Button from "./shared/Button";
 import Rating from "./Rating";
-function FeedbackForm() {
+function FeedbackForm({ handleAdd }) {
   const [text, setText] = useState("");
-  const [btnDisabled, setBtnDisabled] = useState(false);
+  const [btnDisabled, setBtnDisabled] = useState(true);
   const [msg, setMsg] = useState("");
-  const [rating, setRating] = useState(10);
+  const [rating, setRating] = useState();
+
   const grabText = (e) => {
     if (text === "") {
       setBtnDisabled(true);
@@ -20,8 +21,21 @@ function FeedbackForm() {
 
     setText(e.target.value);
   };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (text.trim().length > 10) {
+      const newObject = {
+        text:text,
+        rating:rating
+      }
+      handleAdd(newObject);
+
+    }
+    // setText(" ");
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <ul className="flex flex-col mt-4 mb-4">
         <li className="border-gray-400 flex flex-row mb-2 mt-2">
           <div className="shadow border select-none cursor-pointer bg-red dark:bg-grey-900 rounded-md flex flex-1 items-center p-4">
@@ -32,7 +46,7 @@ function FeedbackForm() {
                 </h1>
 
                 <div className="m-3 items-center">
-                  <Rating />
+                  <Rating select={(rating) => setRating(rating)} />
                 </div>
                 <div className="mb-4 mt-2">
                   <textarea

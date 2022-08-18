@@ -1,15 +1,14 @@
 import { useState } from "react";
-function Rating() {
-  const [selected, setSelected] = useState(3);
+function Rating({ select }) {
+  const [selected, setSelected] = useState();
 
   const handleChange = (e) => {
-
-    setSelected(+e.target.value)
-    console.log(selected)
+    setSelected(+e.currentTarget.value)
+    select(+e.currentTarget.value)
   };
   return (
-    <div>
-      <ul className="inline-grid mx-10 p-1 grid-cols-5 gap-3 ">
+    <div className="grid grid-flow-row auto-rows-max">
+      <ul className="inline-grid mx-4 mr-3  p-2 grid-cols-5 gap-3">
         <li className="">
           <label
             htmlFor="num1"

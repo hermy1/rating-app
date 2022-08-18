@@ -1,18 +1,6 @@
 // import { useState } from "react";
 import { FaTimes } from "react-icons/fa";
-
 function FeedbackOne({ rate, comment, time, id, removeItem }) {
-  // const [rate, setRate] = useState(3);
-  // const [comment, setComment] = useState("default");
-
-  // const com = ['This is great','It doesnt work','Thanks so much']
-
-  // const changeFields = () => {
-  //   setRate((prev) => {
-  //     return prev + 1;
-  //   });
-  //   setComment(com[Math.floor((Math.random()*com.length))])
-  // };
   return (
     <div>
       <ul className="flex flex-col mt-4 mb-4">
@@ -32,7 +20,6 @@ function FeedbackOne({ rate, comment, time, id, removeItem }) {
             </div>
             <div className="flex-1 pl-1 md:mr-16">
               <div className="text-gray-600 dark:text-gray-200 text-sm">
-                {/* This is my example comment after the rating */}
                 {comment}
               </div>
             </div>
@@ -45,15 +32,6 @@ function FeedbackOne({ rate, comment, time, id, removeItem }) {
           </div>
         </li>
       </ul>
-      {/* <div>
-        <button
-          type="button"
-          className="py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
-          onClick={changeFields}
-        >
-          Update
-        </button>
-      </div> */}
     </div>
   );
 }
