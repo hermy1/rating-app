@@ -1,12 +1,11 @@
 import { useState } from "react";
 import RatingData from "./data/RatingData";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import FeedbackList from "./components/FeedbackList";
 import Header from "./components/header";
 import FeedbackStats from "./components/FeedbackStats";
 import FeedbackForm from "./components/FeedbackForm";
 import { v4 as uuidv4 } from "uuid";
-// import About from "./pages/About";
+import FeedbackOne from "./components/FeedbackOne";
 function App() {
   const [rate, setRate] = useState(RatingData);
 
@@ -14,7 +13,6 @@ function App() {
     newObjects.id = uuidv4();
     // console.log(newObjects);
     setRate([newObjects, ...rate]);
-    // setRate(rate => [...newObject, rate])
     // console.log(rate);
   };
   const removeItem = (id) => {
@@ -34,6 +32,7 @@ function App() {
             <FeedbackStats feedback={rate} />
             {console.log(rate)}
             <FeedbackList feedback={rate} removeItems={removeItem} />
+
           </div>
         </div>
       </div>

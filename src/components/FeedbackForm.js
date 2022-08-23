@@ -20,18 +20,20 @@ function FeedbackForm({ handleAdd }) {
     }
 
     setText(e.target.value);
+    
   };
   const handleSubmit = (e) => {
     e.preventDefault();
     if (text.trim().length > 10) {
       const newObject = {
-        text:text,
-        rating:rating
+        comment:text,
+        rate:rating
       }
-      handleAdd(newObject);
-
+      handleAdd(newObject)
+      
+      setText(() => "")
+      setRating(1)
     }
-    // setText(" ");
   };
 
   return (
@@ -51,7 +53,7 @@ function FeedbackForm({ handleAdd }) {
                 <div className="mb-4 mt-2">
                   <textarea
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    id="username"
+                    id="review"
                     type="text"
                     placeholder="Write your review"
                     onChange={grabText}
