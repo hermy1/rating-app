@@ -1,11 +1,14 @@
 import { useState } from "react";
 import Button from "./shared/Button";
 import Rating from "./Rating";
+import { clear } from "@testing-library/user-event/dist/clear";
 function FeedbackForm({ handleAdd }) {
   const [text, setText] = useState("");
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [msg, setMsg] = useState("");
   const [rating, setRating] = useState();
+  // add time
+  const [time,setTime] = useState('')
 
   const grabText = (e) => {
     if (text === "") {
@@ -20,21 +23,29 @@ function FeedbackForm({ handleAdd }) {
     }
 
     setText(e.target.value);
+    setTime(new Date().toLocaleTimeString())
     
   };
+
+  const clearForm = () => {
+    setText('')
+    setRating(1)
+  }
   const handleSubmit = (e) => {
     e.preventDefault();
     if (text.trim().length > 10) {
       const newObject = {
         comment:text,
-        rate:rating
+        rate:rating,
+        time:time
+        //TODO: Add date and time 
       }
       handleAdd(newObject)
-      
-      setText(() => "")
-      setRating(1)
     }
+    clearForm();
   };
+  
+  
 
   return (
     <form onSubmit={handleSubmit}>

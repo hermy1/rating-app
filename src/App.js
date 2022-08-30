@@ -5,15 +5,13 @@ import Header from "./components/header";
 import FeedbackStats from "./components/FeedbackStats";
 import FeedbackForm from "./components/FeedbackForm";
 import { v4 as uuidv4 } from "uuid";
-import FeedbackOne from "./components/FeedbackOne";
 function App() {
   const [rate, setRate] = useState(RatingData);
 
   const addItem = (newObjects) => {
     newObjects.id = uuidv4();
-    // console.log(newObjects);
+
     setRate([newObjects, ...rate]);
-    // console.log(rate);
   };
   const removeItem = (id) => {
     if (window.confirm("Are you sure you want to delete")) {
@@ -30,9 +28,7 @@ function App() {
             <Header text={"Student Rating"} />
             <FeedbackForm handleAdd={addItem} />
             <FeedbackStats feedback={rate} />
-            {console.log(rate)}
             <FeedbackList feedback={rate} removeItems={removeItem} />
-
           </div>
         </div>
       </div>

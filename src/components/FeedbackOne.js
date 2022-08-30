@@ -37,6 +37,6 @@ function FeedbackOne({ rate, comment, time, id, removeItem }) {
 }
 
 FeedbackOne.defaultProps = {
-  time: "10:00am",
+  time: new Date().toLocaleString(),
 };
 export default FeedbackOne;

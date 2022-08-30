@@ -12,6 +12,7 @@ function FeedbackList({ feedback, removeItems }) {
         rate={item.rate}
         comment={item.comment}
         id={item.id}
+        time={item.time}
         removeItem={removeItems}
         />
         ))}
