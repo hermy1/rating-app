@@ -5,18 +5,41 @@ import Header from "./components/header";
 import FeedbackStats from "./components/FeedbackStats";
 import FeedbackForm from "./components/FeedbackForm";
 import { v4 as uuidv4 } from "uuid";
+import axios from "axios";
 function App() {
-  const [rate, setRate] = useState(RatingData);
+  const [rate, setRate] = useState([]);
 
   const addItem = (newObjects) => {
     newObjects.id = uuidv4();
 
-    setRate([newObjects, ...rate]);
+    // setRate([newObjects, ...rate]);
+
+
+    axios
+      .post("http://localhost:3000/rateData/", newObjects)
+      .then((response) => {
+        // setRate(response.data);
+        setRate([newObjects, ...rate]);
+        console.log(newObjects)
+      })
+      .catch((error) => console.log(error));
   };
+
+  //remove items
   const removeItem = (id) => {
     if (window.confirm("Are you sure you want to delete")) {
       setRate(rate.filter((item) => item.id !== id));
     }
+  };
+
+  //pulling form json server
+  const getData = () => {
+    axios
+      .get("http://localhost:3000/rateData/")
+      .then((response) => {
+        // setRate(response.data);
+      })
+      .catch((error) => console.log(error.message));
   };
 
   return (

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Button from "./shared/Button";
 import Rating from "./Rating";
-import { clear } from "@testing-library/user-event/dist/clear";
 function FeedbackForm({ handleAdd }) {
   const [text, setText] = useState("");
   const [btnDisabled, setBtnDisabled] = useState(true);

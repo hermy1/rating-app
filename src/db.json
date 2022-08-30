@@ -1,0 +1,58 @@
+{
+  "rateData": [
+    {
+      "id": 1,
+      "rate": 4,
+      "comment": "Sample First one",
+      "time": "10:42pm"
+    },
+    {
+      "id": 2,
+      "rate": 6,
+      "comment": "Sample Number two",
+      "time": "10:42pm"
+    },
+    {
+      "id": 3,
+      "rate": 10,
+      "comment": "Sample Comment",
+      "time": "10:42pm"
+    },
+    {
+      "comment": "ssssssssssssssssssssssssssssssssssssssssssssss",
+      "rate": 9,
+      "time": "2:49:17 PM",
+      "id": "869a8e84-175d-4193-81d5-c430b898074b"
+    },
+    {
+      "comment": "Testing comment new using api",
+      "rate": 10,
+      "time": "2:49:52 PM",
+      "id": "846669ff-2370-4338-a59b-5eb9fc46d657"
+    },
+    {
+      "comment": "jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj",
+      "rate": 10,
+      "time": "2:51:53 PM",
+      "id": "68d1515e-162c-4545-abfc-9dab82d9839d"
+    },
+    {
+      "comment": "sssssssssssssssssssssssssssssssssss",
+      "rate": 9,
+      "time": "2:53:12 PM",
+      "id": "8a659dca-ffd0-4f7c-a43f-8cd5d41066f2"
+    },
+    {
+      "comment": "ssssssssssssssssssssssssssssssssssssssssssss",
+      "rate": 9,
+      "time": "2:53:46 PM",
+      "id": "2da6ff89-1798-443e-9dd7-4442191f9c74"
+    },
+    {
+      "comment": "ssssssssssssssssssssssssssssssssssss",
+      "rate": 9,
+      "time": "2:56:20 PM",
+      "id": "e9b67cbe-8694-46f0-ac7d-729ca8759634"
+    }
+  ]
+}
