@@ -26,10 +26,7 @@ function FeedbackForm({ handleAdd }) {
     
   };
 
-  const clearForm = () => {
-    setText('')
-    setRating(1)
-  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (text.trim().length > 10) {
@@ -41,7 +38,10 @@ function FeedbackForm({ handleAdd }) {
       }
       handleAdd(newObject)
     }
-    clearForm();
+   //clear form after submit react
+   setRating(null) //TODO: clear rating
+    e.target.reset();
+
   };
   
   

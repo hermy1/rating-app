@@ -9,20 +9,28 @@ import axios from "axios";
 function App() {
   const [rate, setRate] = useState([]);
 
+
+  if (rate.length === 0) {
+    axios.get("http://localhost:3000/rateData").then((response) => {
+      setRate(response.data);
+      console.log('loaded data')
+    });
+  } else {
+    console.log("data not loaded");
+  }
+
+
   const addItem = (newObjects) => {
     newObjects.id = uuidv4();
-
-    // setRate([newObjects, ...rate]);
-
 
     axios
       .post("http://localhost:3000/rateData/", newObjects)
       .then((response) => {
-        // setRate(response.data);
         setRate([newObjects, ...rate]);
-        console.log(newObjects)
       })
       .catch((error) => console.log(error));
+
+
   };
 
   //remove items
@@ -30,16 +38,6 @@ function App() {
     if (window.confirm("Are you sure you want to delete")) {
       setRate(rate.filter((item) => item.id !== id));
     }
-  };
-
-  //pulling form json server
-  const getData = () => {
-    axios
-      .get("http://localhost:3000/rateData/")
-      .then((response) => {
-        // setRate(response.data);
-      })
-      .catch((error) => console.log(error.message));
   };
 
   return (
