@@ -1,5 +1,4 @@
 import { useState } from "react";
-import RatingData from "./data/RatingData";
 import FeedbackList from "./components/FeedbackList";
 import Header from "./components/header";
 import FeedbackStats from "./components/FeedbackStats";
@@ -13,7 +12,7 @@ function App() {
   if (rate.length === 0) {
     axios.get("http://localhost:3000/rateData").then((response) => {
       setRate(response.data);
-      console.log('loaded data')
+      console.log(response.data);
     });
   } else {
     console.log("data not loaded");
