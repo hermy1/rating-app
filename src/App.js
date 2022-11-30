@@ -4,21 +4,31 @@ import Header from "./components/header";
 import FeedbackStats from "./components/FeedbackStats";
 import FeedbackForm from "./components/FeedbackForm";
 import { v4 as uuidv4 } from "uuid";
+import Button from "./components/shared/Button"
+import Modal from "./components/shared/Modal";
 import axios from "axios";
 function App() {
   const [rate, setRate] = useState([]);
+  //show and hide modal
+  const [showModal,setShowModal] = useState(false);
+  
+  
+  //show modal 
+  const showModalHandler = () => {
+    setShowModal(true)
+  }
+  //hide modal
+  const hideModalHandler = () => {
+    setShowModal(false)
+  }
 
-
+const sample = "About this App"
   if (rate.length === 0) {
     axios.get("http://localhost:3000/rateData").then((response) => {
       setRate(response.data);
-      console.log(response.data);
     });
-  } else {
-    console.log("data not loaded");
-  }
-
-
+  } 
+//adding items
   const addItem = (newObjects) => {
     newObjects.id = uuidv4();
 
@@ -49,6 +59,17 @@ function App() {
             <FeedbackForm handleAdd={addItem} />
             <FeedbackStats feedback={rate} />
             <FeedbackList feedback={rate} removeItems={removeItem} />
+            <Button 
+            children={sample}
+            showModal={showModalHandler}
+            />
+            <Modal
+           showModal={showModal}
+           hideModal={hideModalHandler}
+          
+            
+            />
+
           </div>
         </div>
       </div>

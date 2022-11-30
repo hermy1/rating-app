@@ -6,7 +6,6 @@ function FeedbackForm({ handleAdd }) {
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [msg, setMsg] = useState("");
   const [rating, setRating] = useState();
-  // add time
   const [time,setTime] = useState('')
 
   const grabText = (e) => {
@@ -22,11 +21,12 @@ function FeedbackForm({ handleAdd }) {
     }
 
     setText(e.target.value);
-    setTime(new Date().toLocaleTimeString())
+    setTime(new Date(Date.UTC(2012, 11, 12, 3, 0, 0)).toLocaleDateString())
     
   };
 
 
+//submit 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (text.trim().length > 10) {
@@ -34,15 +34,17 @@ function FeedbackForm({ handleAdd }) {
         comment:text,
         rate:rating,
         time:time
-        //TODO: Add date and time 
       }
       handleAdd(newObject)
     }
    //clear form after submit react
    setRating(null) //TODO: clear rating
+
+   console.log(rating)
     e.target.reset();
 
   };
+  
   
   
 

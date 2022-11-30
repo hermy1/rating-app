@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
-function Button({ children, type, isDisabled }) {
+function Button({ children, type, isDisabled, showModal }) {
   return (
     <div>
       <button
         className=" bg-indigo-600 hover:bg-indigo-700 text-white text-center text-base focus:outline-none font-semibold shadow-md py-2 px-4 mt-3 rounded disabled:opacity-50"
         type={type}
         disabled={isDisabled}
+        onClick={showModal}
       >
         {children}
       </button>
