@@ -1,17 +1,10 @@
 import React from "react";
 
-function Pagination({
-  getNext,
-  getPrevious,
-  isDisabled,
-  prev,
-  currentPage,
-}) {
-
+function Pagination({ getNext, getPrevious, isDisabled, prev, currentPage }) {
   return (
     <div className="grid grid-cols-3 gap-2">
       <button
-        className="bg-blue-500 px-4 rounded py-1 mr-1 disabled:bg-red-400"
+        className=" bg-indigo-600 hover:bg-indigo-700 text-white text-center text-base focus:outline-none font-semibold shadow-md py-2  px-4 mt-2 rounded disabled:opacity-50"
         disabled={prev}
         onClick={() => {
           getPrevious();
@@ -19,11 +12,11 @@ function Pagination({
       >
         Prev
       </button>
-      <div className="text-center font-medium text-red-300 mt-2">
+      <div className="text-center font-medium text-red-300 mt-3">
         <p>{currentPage / 3 + 1}</p>
       </div>
       <button
-        className="bg-blue-500 px-4 rounded py-1 disabled:bg-red-400"
+        className=" bg-indigo-600 hover:bg-indigo-700 text-white text-center text-base focus:outline-none font-semibold shadow-md py-2 px-4 mt-2 rounded disabled:opacity-50"
         disabled={isDisabled}
         onClick={() => {
           getNext();

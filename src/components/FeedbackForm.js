@@ -19,10 +19,8 @@ function FeedbackForm({ handleAdd }) {
       setMsg(null);
       setBtnDisabled(false);
     }
-
     setText(e.target.value);
     setTime(new Date(Date.UTC(2012, 11, 12, 3, 0, 0)).toLocaleDateString())
-    
   };
 
 
@@ -45,9 +43,6 @@ function FeedbackForm({ handleAdd }) {
 
   };
   
-  
-  
-
   return (
     <form onSubmit={handleSubmit}>
       <ul className="flex flex-col mt-4 mb-4">

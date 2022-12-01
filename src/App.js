@@ -31,15 +31,12 @@ const sample = "About this App"
 //adding items
   const addItem = (newObjects) => {
     newObjects.id = uuidv4();
-
     axios
       .post("http://localhost:3000/rateData/", newObjects)
       .then((response) => {
         setRate([newObjects, ...rate]);
       })
       .catch((error) => console.log(error));
-
-
   };
 
   //remove items
@@ -48,7 +45,6 @@ const sample = "About this App"
       setRate(rate.filter((item) => item.id !== id));
     }
   };
-
   return (
     <div className="max-w-screen-xl px-4 py-8 mx-auto sm:py-12 sm:px-6 lg:px-8">
       <div className="max-w-2xl px-8 py-4 mx-auto bg-white rounded-lg shadow-md dark:bg-gray-800">
@@ -66,10 +62,7 @@ const sample = "About this App"
             <Modal
            showModal={showModal}
            hideModal={hideModalHandler}
-          
-            
             />
-
           </div>
         </div>
       </div>
