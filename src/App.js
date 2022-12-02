@@ -22,7 +22,7 @@ function App() {
     setShowModal(false)
   }
 
-const sample = "About this App"
+const info = "About this App"
   if (rate.length === 0) {
     axios.get("http://localhost:3000/rateData").then((response) => {
       setRate(response.data);
@@ -56,7 +56,7 @@ const sample = "About this App"
             <FeedbackStats feedback={rate} />
             <FeedbackList feedback={rate} removeItems={removeItem} />
             <Button 
-            children={sample}
+            children={info}
             showModal={showModalHandler}
             />
             <Modal
