@@ -21,7 +21,7 @@ function App() {
   const hideModalHandler = () => {
     setShowModal(false)
   }
-
+  //add new feedback
 const info = "About this App"
   if (rate.length === 0) {
     axios.get("http://localhost:3000/rateData").then((response) => {

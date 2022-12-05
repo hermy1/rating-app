@@ -57,6 +57,7 @@ function FeedbackList({ feedback, removeItems }) {
               key={item.id}
               rate={item.rate}
               comment={item.comment}
+              name={item.name}
               id={item.id}
               time={item.time}
               removeItem={removeItems}
