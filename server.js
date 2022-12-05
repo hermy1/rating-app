@@ -5,7 +5,7 @@ const path = require('path');
 const express = require('express');
 const middlewares = jsonServer.defaults();
 const router = jsonServer.router('src/db.json');
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3004;
 
 app.use('/db', middlewares, router);
 
