@@ -24,7 +24,7 @@ function App() {
   //add new feedback
 const info = "About this App"
   if (rate.length === 0) {
-    axios.get("http://localhost:3000/db/rateData").then((response) => {
+    axios.get("http://localhost:3004/db/rateData").then((response) => {
       setRate(response.data);
     });
   } 
