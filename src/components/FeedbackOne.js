@@ -1,6 +1,6 @@
 // import { useState } from "react";
 import { FaTimes } from "react-icons/fa";
-function FeedbackOne({ rate, comment, time, id, removeItem }) {
+function FeedbackOne({ rate, comment, time, id, removeItem,name }) {
   return (
     <div>
       <ul className="flex flex-col mt-4 mb-4">
@@ -19,6 +19,7 @@ function FeedbackOne({ rate, comment, time, id, removeItem }) {
               </span>
             </div>
             <div className="flex-1 pl-1 md:mr-16">
+              <p className="text-red-300 font-bold text-sm">{name}</p>
               <div className="text-gray-600 dark:text-gray-200 text-sm">
                 {comment}
               </div>

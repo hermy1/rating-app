@@ -19,7 +19,7 @@ function Modal({showModal,hideModal}) {
             <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
               <h3 className="text-lg font-medium leading-6 text-gray-900" id="modal-title">About this app</h3>
               <div className="mt-2">
-                <p className="text-sm text-gray-500">This app is designed with React JS "Create React App", Tailwind CSS, axios for fetching data and Json-server to mock backend (API). If you want to look at the github repository click <a href='#' target="_blank">here</a>. </p>
+                <p className="text-sm text-gray-500">This app is designed with React JS "Create React App", Tailwind CSS, axios for fetching data and Json-server to mock backend (API). If you want to look at the github repository click <a href='https://github.com/hermy1/rating-app' rel="noreferrer" target="_blank" >here</a>. </p>
               </div>
             </div>
           </div>
