@@ -32,7 +32,7 @@ const info = "About this App"
   const addItem = (newObjects) => {
     newObjects.id = uuidv4();
     axios
-      .post("http://localhost:3000/rateData/", newObjects)
+      .post("http://localhost:3004/db/rateData/", newObjects)
       .then((response) => {
         setRate([newObjects, ...rate]);
       })
